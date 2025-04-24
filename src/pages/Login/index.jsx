@@ -1,6 +1,6 @@
 import { useState } from "preact/hooks";
 import "./login.css";
-import { auth } from "../../firebase"; // Import Firebase
+import { auth } from "../../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useLocation } from "preact-iso";
 
@@ -17,13 +17,11 @@ export function Login() {
     setError("");
 
     try {
-      // Gọi Firebase Authentication API
       const userCredential = await signInWithEmailAndPassword(
         auth,
         email,
         password
       );
-
       route("/home");
     } catch (err) {
       setError("Email hoặc mật khẩu không đúng");
