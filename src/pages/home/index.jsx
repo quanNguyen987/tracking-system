@@ -9,8 +9,8 @@ export function Home() {
   const [fullscreenImage, setFullscreenImage] = useState(null);
   const { route } = useLocation();
   const formatTimestamp = (timestamp) => {
-    const date = timestamp.toDate();
-    return date.toLocaleString();
+     const date = timestamp?.toDate();
+    return date?.toLocaleString();
   };
 
   useEffect(() => {
