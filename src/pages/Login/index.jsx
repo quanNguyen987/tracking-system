@@ -33,7 +33,7 @@ export function Login() {
 
   return (
     <div class="login-container">
-      <h2 style={{ color: "black" }}>🔐 Đăng nhập</h2>
+      <h2 style={{ color: "black" }}> Đăng nhập</h2>
       <form onSubmit={handleSubmit} class="login-form">
         <input
           type="email"
