@@ -1,121 +1,73 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+	font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+	line-height: 1.5;
+	font-weight: 400;
 
-  color: #222;
-  background-color: #ffffff;
+	color: #222;
+	background-color: #ffffff;
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-text-size-adjust: 100%;
 }
 
 body {
-  margin: 0;
+	margin: 0;
+	background-image: none;
 }
 
 #app {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
 }
 
 header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.5rem 1rem;
-  background-color: #4a00e0; /* Tím nhạt cho sáng */
-  color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Bóng nhẹ */
-}
-
-header img {
-  height: 40px;
-  background-color: #fff; /* Nền trắng cho logo */
-  padding: 4px;
-  border-radius: 4px;
+	display: flex;
+	justify-content: flex-end;
+	background-color: #673ab8;
 }
 
 header nav {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
+	display: flex;
 }
 
 header a {
-  color: #fff;
-  padding: 0.75rem;
-  text-decoration: none;
+	color: #fff;
+	padding: 0.75rem;
+	text-decoration: none;
 }
 
 header a.active {
-  background-color: rgba(255, 255, 255, 0.2);
+	background-color: #0005;
 }
 
 header a:hover {
-  background-color: rgba(255, 255, 255, 0.3);
-}
-
-header button {
-  background: none;
-  border: none;
-  color: #fff;
-  padding: 0.75rem;
-  cursor: pointer;
-  text-decoration: underline;
-  font-size: 1rem;
-}
-
-header button:hover {
-  background-color: rgba(255, 255, 255, 0.3);
+	background-color: #0008;
 }
 
 main {
-  flex: auto;
-  display: flex;
-  align-items: center;
-  max-width: 1280px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.home-title {
-  font-size: 1.8rem;
-  margin-bottom: 1.5rem;
-  color: #222; /* Đen cho sáng */
+	flex: auto;
+	display: flex;
+	align-items: center;
+	max-width: 100%;
+	justify-content: center;
+	text-align: center;
+	
 }
 
 @media (max-width: 639px) {
-  main {
-    margin: 2rem;
-  }
+	main {
+		margin: 0;
+		
+	}
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    color: #ccc;
-    background-color: #1a1a1a;
-  }
-
-  header {
-    background-color: #2a2a2a; /* Xám đậm cho tối */
-    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
-  }
-
-  header a.active {
-    background-color: rgba(255, 255, 255, 0.1);
-  }
-
-  header a:hover,
-  header button:hover {
-    background-color: rgba(255, 255, 255, 0.2);
-  }
-
-  .home-title {
-    color: #fff; /* Trắng cho tối */
-  }
+	:root {
+		color: #ccc;
+		background-color: #1a1a1a;
+	}
 }
