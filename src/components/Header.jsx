@@ -1,41 +1,45 @@
 import { useLocation } from "preact-iso";
-import { useEffect, useState } from "preact/hooks";
-import { getAuth, signOut, onAuthStateChanged } from "firebase/auth";
+import { auth } from "../firebase";
+import { signOut } from "firebase/auth";
 
 export function Header() {
   const { url, route } = useLocation();
-  const [user, setUser] = useState(null);
-
-  useEffect(() => {
-    const auth = getAuth();
-    const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-      setUser(currentUser);
-    });
-
-    return () => unsubscribe();
-  }, []);
 
   const handleLogout = async () => {
-    const auth = getAuth();
     try {
       await signOut(auth);
       route("/");
-    } catch (error) {
-      console.error("Lỗi khi đăng xuất:", error);
+    } catch (err) {
+      console.error("Đăng xuất thất bại:", err);
     }
   };
 
   return (
-    <header>
-      <div>
-        <img src="/logo-iuh.png" alt="Logo" />
-        <img src="logo-fet-iuh.jpg" alt="LogoFet" />
-      </div>
+    <header
+      style={{
+        display: "flex",
+        alignItems: "center",
+        gap: "1rem",
+        padding: "0.5rem",
+        justifyContent: "space-between",
+        backgroundColor: "#282c34",
+        color: "#fff",
+      }}
+    >
+      <img src="/logo-iuh.png" alt="Logo" style={{ height: "40px" }} />
+      <img src="/logo-fet-iuh.jpg" alt="LogoFet" style={{ height: "40px" }} />
+
       <nav>
-        <a href="/home" class={url === "/home" ? "active" : ""}>
-          Home
-        </a>
-        {user && <button onClick={handleLogout}>Đăng xuất</button>}
+        <button onClick={handleLogout} style={{
+          background: "none",
+          border: "1px solid #fff",
+          color: "#fff",
+          padding: "0.3rem 0.6rem",
+          borderRadius: "4px",
+          cursor: "pointer"
+        }}>
+          Đăng xuất
+        </button>
       </nav>
     </header>
   );

@@ -32,9 +32,10 @@ export function Login() {
   };
 
   return (
-    <div class="login-container">
-      <h2 style={{ color: "black" }}> Đăng nhập</h2>
-      <form onSubmit={handleSubmit} class="login-form">
+    <div className="login-container">
+      <form onSubmit={handleSubmit} className="login-form">
+        <h2>Đăng nhập</h2>
+        <p className="subtitle">Hệ thống phát hiện đối tượng tình nghi</p>
         <input
           type="email"
           placeholder="Email"
@@ -52,7 +53,7 @@ export function Login() {
         <button type="submit" disabled={loading}>
           {loading ? "Đang đăng nhập..." : "Đăng nhập"}
         </button>
-        {error && <p class="error">{error}</p>}
+        {error && <p className="error">{error}</p>}
       </form>
     </div>
   );
